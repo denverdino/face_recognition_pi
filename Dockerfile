@@ -1,7 +1,6 @@
 # This is a sample Dockerfile you can modify to deploy your own app based on face_recognition
 
 FROM resin/raspberry-pi-python:3
-#COPY sources.list /etc/apt/sources.list
 COPY pip.conf /root/.pip/pip.conf
 RUN apt-get -y update
 RUN apt-get install -y --fix-missing \
@@ -26,12 +25,6 @@ RUN apt-get install -y --fix-missing \
     zip \
     && apt-get clean && rm -rf /tmp/* /var/tmp/*
 RUN python3 -m ensurepip --upgrade && pip3 install --upgrade picamera[array] dlib
-#RUN cd ~ && \
-#    mkdir -p dlib && \
-#    git clone -b 'v19.7' --single-branch https://github.com/davisking/dlib.git dlib/ && \
-#    cd  dlib/ && \
-#    python3 setup.py install --yes --compiler-flags "-mfpu=neon"
-
 
 # The rest of this file just runs an example script.
 
