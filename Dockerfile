@@ -1,6 +1,8 @@
 # This is a sample Dockerfile you can modify to deploy your own app based on face_recognition
 
 FROM resin/raspberry-pi-python:3
+COPY raspi.list /etc/apt/sources.list.d/raspi.list
+COPY sources.list /etc/apt/sources.list
 COPY pip.conf /root/.pip/pip.conf
 RUN apt-get -y update
 RUN apt-get install -y --fix-missing \

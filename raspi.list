@@ -1,0 +1,2 @@
+deb http://mirror.tuna.tsinghua.edu.cn/raspberrypi/ stretch main ui
+deb-src http://mirror.tuna.tsinghua.edu.cn/raspberrypi/ stretch main ui
